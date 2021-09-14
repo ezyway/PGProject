@@ -1,0 +1,50 @@
+*{
+	box-sizing:border-box;
+}
+.group{
+	position:relative;
+	margin:15px;
+}
+input{
+	width:300px;
+	padding:10px;
+	border:none;
+	border-bottom:1px solid black;
+}
+input:focus{outline:none}
+label{
+	position:absolute;
+	top:10px;
+	left:5px;
+	pointer-events:none;
+	transition:0.5s;
+}
+input:focus ~ label, input:valid ~ label{
+	top:-10px;
+	font-size:15px;
+	color:blue;
+}
+
+.bar{
+	width:300px;
+	display:block;
+	position:relative;
+}
+
+.bar:before,.bar:after{
+	content:'';
+	height:2px;
+	width:0px;
+	position:absolute;
+	background:blue;
+	transition:1s;
+}
+.bar:before{
+	left:50%;
+}
+.bar:after{
+	right:50%;
+}
+input:focus ~ .bar:before,input:focus ~ .bar:after{
+	width:50%;
+}
